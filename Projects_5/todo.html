@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles2.css">
+</head>
+<body>
+    <h1>Welcome to TO-DO List!!</h1>
+    <h3>Enter your Tasks!</h3>
+    <input type="text" placeholder="Enter Task" id="data">
+    <button id="butt">Add</button>
+    <div class="container">
+        <ul id="task">
+               
+        </ul>
+    </div>
+</body>
+<script>
+document.getElementById('butt').addEventListener('click', function () {
+    let work = document.querySelector('#data').value;
+
+    let li = document.createElement('li');
+    li.innerText = work;
+
+    let button = document.createElement('button');
+    button.innerText = "Delete";
+
+    li.appendChild(button)
+    document.getElementById('task').appendChild(li);
+
+    button.addEventListener('click', function () {
+        li.remove();
+    });
+});
+
+
+</script>
+</html>
